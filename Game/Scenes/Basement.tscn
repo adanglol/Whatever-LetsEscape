@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://wrdlpmwf3fhj"]
+
+[sub_resource type="Theme" id="Theme_ejk6j"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.278431, 0.337255, 0.294118, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 1336.0
+offset_top = 19.0
+offset_right = 1907.0
+offset_bottom = 148.0
+theme = SubResource("Theme_ejk6j")
+theme_override_font_sizes/normal_font_size = 76
+text = "BASEMENT"

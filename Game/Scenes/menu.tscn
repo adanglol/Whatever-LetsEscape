@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbr30pcbr0ubn"]
+[gd_scene load_steps=4 format=3 uid="uid://cbr30pcbr0ubn"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MenuScript.gd" id="1_h1fks"]
 
 [sub_resource type="Theme" id="Theme_a34o1"]
 default_font_size = 170
 
-[sub_resource type="Theme" id="Theme_4ylwx"]
+[sub_resource type="Theme" id="Theme_8fdyj"]
 
 [node name="menu" type="Node2D"]
 position = Vector2(3, -19)
@@ -31,12 +33,15 @@ offset_bottom = 410.0
 theme = SubResource("Theme_a34o1")
 text = "Whatever, Let's Escape!"
 
-[node name="Button" type="Button" parent="Control/ColorRect"]
+[node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 618.0
-offset_top = 555.0
-offset_right = 1325.0
-offset_bottom = 805.0
-theme = SubResource("Theme_4ylwx")
-theme_override_font_sizes/font_size = 161
+offset_left = 287.0
+offset_top = 490.0
+offset_right = 1640.0
+offset_bottom = 847.0
+theme = SubResource("Theme_8fdyj")
+theme_override_font_sizes/font_size = 256
 text = "Start"
+script = ExtResource("1_h1fks")
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
