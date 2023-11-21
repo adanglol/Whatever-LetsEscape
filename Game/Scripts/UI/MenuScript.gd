@@ -8,4 +8,4 @@ func _on_pressed():
 	
 	# Access TimerSingleton and start the timer
 	var timer_singleton = TimerManager
-	timer_singleton.start_timer(5.0)
+	timer_singleton.start_timer(5)
