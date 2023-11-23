@@ -140,7 +140,7 @@ offset_bottom = 123.245
 theme_override_font_sizes/font_size = 81
 text = "Key 2"
 
-[node name="key2" parent="inventoryUI/Slot2" instance=ExtResource("4_4tspe")]
+[node name="object" parent="inventoryUI/Slot2" instance=ExtResource("4_4tspe")]
 position = Vector2(293, 71.245)
 
 [node name="Slot3" type="ColorRect" parent="inventoryUI"]
@@ -158,7 +158,7 @@ offset_bottom = 123.245
 theme_override_font_sizes/font_size = 81
 text = "Key 3"
 
-[node name="key3" parent="inventoryUI/Slot3" instance=ExtResource("4_4tspe")]
+[node name="object" parent="inventoryUI/Slot3" instance=ExtResource("4_4tspe")]
 position = Vector2(293, 71.245)
 
 [node name="Slot4" type="ColorRect" parent="inventoryUI"]
@@ -176,7 +176,7 @@ offset_bottom = 123.245
 theme_override_font_sizes/font_size = 81
 text = "Key 4"
 
-[node name="key4" parent="inventoryUI/Slot4" instance=ExtResource("4_4tspe")]
+[node name="object" parent="inventoryUI/Slot4" instance=ExtResource("4_4tspe")]
 position = Vector2(293, 71.245)
 
 [node name="Slot5" type="ColorRect" parent="inventoryUI"]
@@ -194,7 +194,7 @@ offset_bottom = 123.245
 theme_override_font_sizes/font_size = 81
 text = "Key 5"
 
-[node name="key5" parent="inventoryUI/Slot5" instance=ExtResource("4_4tspe")]
+[node name="object" parent="inventoryUI/Slot5" instance=ExtResource("4_4tspe")]
 position = Vector2(293, 71.245)
 
 [node name="UIbg" type="TextureRect" parent="."]
@@ -211,8 +211,3 @@ texture = SubResource("PlaceholderTexture2D_el7fl")
 [connection signal="clicked" from="key_3" to="." method="key3_clicked"]
 [connection signal="clicked" from="key_4" to="." method="key4_clicked"]
 [connection signal="clicked" from="key_5" to="." method="key5_clicked"]
-[connection signal="key_touching_door" from="inventoryUI/Slot1/key1" to="." method="_on_key_1_key_touching_door"]
-[connection signal="key_touching_door" from="inventoryUI/Slot2/key2" to="." method="_on_key_2_key_touching_door"]
-[connection signal="key_touching_door" from="inventoryUI/Slot3/key3" to="." method="_on_key_3_key_touching_door"]
-[connection signal="key_touching_door" from="inventoryUI/Slot4/key4" to="." method="_on_key_4_key_touching_door"]
-[connection signal="key_touching_door" from="inventoryUI/Slot5/key5" to="." method="_on_key_5_key_touching_door"]

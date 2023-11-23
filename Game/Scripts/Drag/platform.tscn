@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnt04kpalw5a2"]
+
+[ext_resource type="Script" path="res://Scripts/Drag/platform.gd" id="1_y0iqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27fj1"]
+size = Vector2(128, 128)
+
+[node name="platform" type="StaticBody2D" groups=["dropable"]]
+top_level = true
+script = ExtResource("1_y0iqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_27fj1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0.596078, 0.282353, 0.411765, 1)
+metadata/_edit_use_anchors_ = true

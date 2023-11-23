@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://3ro222udd8ts"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.172549, 0.101961, 0.054902, 1)
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 66.0
+offset_right = 1581.0
+offset_bottom = 538.0
+theme_override_font_sizes/font_size = 291
+text = "Hallway"

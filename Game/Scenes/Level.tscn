@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxrdsh64u1vqm"]
+[gd_scene load_steps=7 format=3 uid="uid://bxrdsh64u1vqm"]
 
 [ext_resource type="PackedScene" uid="uid://hnyt5ti8y3jl" path="res://Scenes/player.tscn" id="1_g81eq"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/3D/player.gd" id="2_88fow"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_myboj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -45,4 +44,3 @@ shape = SubResource("ConcavePolygonShape3D_mpqdr")
 [node name="Player" parent="." instance=ExtResource("1_g81eq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 linear_damp = 3.0
-script = ExtResource("2_88fow")
