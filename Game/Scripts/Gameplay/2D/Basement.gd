@@ -18,6 +18,7 @@ var key1 = null
 # var key4 = null
 # var key5 = null
 var boxOpen = false
+var boxOpenSprite = null
 
 func _ready():
 	print("Inside Basement Scene")
@@ -32,6 +33,7 @@ func _ready():
 	inventoryUI.visible = false
 	# IMPLEMENT CHANGING SPRITES FOR KEY WHEN ASSETS COME IN 
 
+
 	key1 = inventoryUI.get_node("Slot1").get_node("key1").get_node("Area2D")
 	print(key1)
 	# print(key1.body)
@@ -40,7 +42,8 @@ func _ready():
 	# keyFour = inventoryUI.get_node("Slot4").get_node("key4")
 	# keyFive = inventoryUI.get_node("Slot5").get_node("key5")
 
-	
+	boxOpenSprite = get_node("Box")
+	print(boxOpenSprite)	
 
 func open_box():
 	print("Box has been opened")

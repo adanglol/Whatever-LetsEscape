@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://wrdlpmwf3fhj"]
+[gd_scene load_steps=11 format=3 uid="uid://wrdlpmwf3fhj"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/2D/Basement.gd" id="1_v0gbe"]
+[ext_resource type="Texture2D" uid="uid://co5h70qqj275f" path="res://Assets/Basement/Basement.png" id="2_cnn4r"]
 [ext_resource type="PackedScene" uid="uid://cn0wgh38r3ijq" path="res://Scenes/Item.tscn" id="2_lmauf"]
-[ext_resource type="Texture2D" uid="uid://dwfompkk3q2cb" path="res://Assets/Basement.png" id="2_ns45x"]
 [ext_resource type="PackedScene" uid="uid://dfevwl0b5bclt" path="res://Scripts/Drag/object.tscn" id="4_4tspe"]
 [ext_resource type="Script" path="res://Scripts/Drag/platform.gd" id="4_f8dsm"]
-
-[sub_resource type="Theme" id="Theme_ejk6j"]
+[ext_resource type="Texture2D" uid="uid://dsabiy2v2du2p" path="res://Assets/Basement/Box.png" id="4_qes4f"]
+[ext_resource type="Texture2D" uid="uid://bqcr33g32esub" path="res://Assets/Basement/Door Lock.png" id="5_u2af8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itmug"]
 size = Vector2(357.024, 653.5)
@@ -27,31 +27,13 @@ offset_bottom = 1080.0
 
 [node name="Background" type="Sprite2D" parent="Control"]
 position = Vector2(956, 538)
-texture = ExtResource("2_ns45x")
+texture = ExtResource("2_cnn4r")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_left = 1336.0
-offset_top = 19.0
-offset_right = 1907.0
-offset_bottom = 148.0
-theme = SubResource("Theme_ejk6j")
-theme_override_font_sizes/normal_font_size = 76
-text = "BASEMENT"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_left = 1553.0
-offset_top = 862.0
-offset_right = 1710.0
-offset_bottom = 991.0
-theme = SubResource("Theme_ejk6j")
-theme_override_font_sizes/normal_font_size = 76
-text = "Box"
-
-[node name="Box" parent="Control" instance=ExtResource("2_lmauf")]
-modulate = Color(0.235294, 0.396078, 0.027451, 0.494118)
-position = Vector2(1627, 922)
+[node name="Box" parent="." instance=ExtResource("2_lmauf")]
+position = Vector2(1617, 938)
+rotation = -3.14159
+scale = Vector2(0.708365, -0.485379)
+texture = ExtResource("4_qes4f")
 
 [node name="key" parent="." instance=ExtResource("2_lmauf")]
 visible = false
@@ -77,6 +59,10 @@ scale = Vector2(193, -109.125)
 visible = false
 position = Vector2(1534, 607)
 scale = Vector2(188, -109.125)
+
+[node name="DoorSprite" type="Sprite2D" parent="."]
+position = Vector2(892, 398)
+texture = ExtResource("5_u2af8")
 
 [node name="Door" type="StaticBody2D" parent="." groups=["door"]]
 script = ExtResource("4_f8dsm")
@@ -205,7 +191,7 @@ offset_right = 365.0
 offset_bottom = 855.0
 texture = SubResource("PlaceholderTexture2D_el7fl")
 
-[connection signal="clicked" from="Control/Box" to="." method="open_box"]
+[connection signal="clicked" from="Box" to="." method="open_box"]
 [connection signal="clicked" from="key" to="." method="key_clicked"]
 [connection signal="clicked" from="key_2" to="." method="key2_clicked"]
 [connection signal="clicked" from="key_3" to="." method="key3_clicked"]

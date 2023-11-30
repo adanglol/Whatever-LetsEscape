@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfevwl0b5bclt"]
 
 [ext_resource type="Script" path="res://Scripts/Drag/object.gd" id="1_iqmlw"]
-[ext_resource type="Texture2D" uid="uid://bng2n3vxlfk1x" path="res://icon.svg" id="2_otgdm"]
+[ext_resource type="Texture2D" uid="uid://bnje551s04vhp" path="res://Assets/Basement/Rusty Key.png" id="2_m7jjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab6ol"]
 size = Vector2(128, 128)
@@ -10,7 +10,9 @@ size = Vector2(128, 128)
 script = ExtResource("1_iqmlw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_otgdm")
+position = Vector2(0.499999, -3.33786e-06)
+scale = Vector2(0.15875, 0.1575)
+texture = ExtResource("2_m7jjo")
 
 [node name="Area2D" type="Area2D" parent="."]
 
