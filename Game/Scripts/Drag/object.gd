@@ -12,7 +12,7 @@ func _ready():
 	original_position = position
 
 
-func _process(delta):
+func _process(_delta):
 	if draggable:
 
 		# if Input.is_action_just_pressed("click"):
@@ -59,7 +59,7 @@ func _on_area_2d_body_entered(body: StaticBody2D):
 		
 		
 
-func _on_area_2d_body_exited(body):
+func _on_area_2d_body_exited(_body):
 	print("body exited")
 
 

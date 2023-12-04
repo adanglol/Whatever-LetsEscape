@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct8xvsth6jkj3"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/2D/HallwayUp.gd" id="1_82c0y"]
+[ext_resource type="Texture2D" uid="uid://bqcr33g32esub" path="res://Assets/Basement/Door Lock.png" id="1_l4sjp"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Item.gd" id="3_5ekxa"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_82c0y")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.505882, 0.517647, 0.45098, 1)
+
+[node name="BedroomDoor" type="Sprite2D" parent="."]
+position = Vector2(348, 361)
+texture = ExtResource("1_l4sjp")
+
+[node name="AltarDoor" type="Sprite2D" parent="."]
+position = Vector2(1515, 365)
+texture = ExtResource("1_l4sjp")
+
+[node name="Downstairs" type="Sprite2D" parent="."]
+position = Vector2(906, 883)
+scale = Vector2(1, 0.6075)
+texture = ExtResource("1_l4sjp")
+script = ExtResource("3_5ekxa")
+
+[connection signal="clicked" from="Downstairs" to="." method="_on_downstairs_clicked"]

@@ -12,13 +12,14 @@ var key5 = null
 var inventoryUI = null
 var door = null
 var bgUI = null
-var key1 = null
-# var key2 = null
-# var key3 = null
-# var key4 = null
-# var key5 = null
 var boxOpen = false
+var box = null
 var boxOpenSprite = null
+var insideBox = null
+var allKeys = 0
+var doorSprite = null
+var fadeOut = null
+var new_texture : Texture = preload("res://Assets/Basement/Door Unlock.png") 
 
 func _ready():
 	print("Inside Basement Scene")
@@ -31,24 +32,23 @@ func _ready():
 	inventoryUI = get_node("inventoryUI")
 	bgUI = get_node("UIbg")
 	inventoryUI.visible = false
-	# IMPLEMENT CHANGING SPRITES FOR KEY WHEN ASSETS COME IN 
-
-
-	key1 = inventoryUI.get_node("Slot1").get_node("key1").get_node("Area2D")
-	print(key1)
-	# print(key1.body)
-	# keyTwo = inventoryUI.get_node("Slot2").get_node("key2")
-	# keyThree = inventoryUI.get_node("Slot3").get_node("key3")
-	# keyFour = inventoryUI.get_node("Slot4").get_node("key4")
-	# keyFive = inventoryUI.get_node("Slot5").get_node("key5")
-
-	boxOpenSprite = get_node("Box")
-	print(boxOpenSprite)	
+	box = get_node("Box")
+	boxOpenSprite = get_node("BoxOpen")	
+	insideBox = get_node("InsideBox")
+	doorSprite = get_node("DoorSprite")
+	fadeOut = get_node("fadeOut")
 
 func open_box():
 	print("Box has been opened")
 	if boxOpen == false:
 		boxOpen = true
+		boxOpenSprite.visible = true
+		box.queue_free()
+
+		# yield for 2 seconds
+		await get_tree().create_timer(1.0).timeout
+		print("2 seconds have passed")
+		insideBox.visible = true
 		# set keys to visible
 		key.visible = true
 		key2.visible = true
@@ -63,6 +63,7 @@ func key_clicked():
 	print(inventory.items)
 	inventoryUI.get_child(0).visible = true
 	key.queue_free()
+	allKeys += 1
 
 func key2_clicked():
 	print("Key 2 has been picked up")
@@ -71,6 +72,7 @@ func key2_clicked():
 	print(inventory.items)
 	inventoryUI.get_child(1).visible = true
 	key2.queue_free()
+	allKeys += 1
 
 func key3_clicked():
 	print("Key 3 has been picked up")
@@ -79,6 +81,7 @@ func key3_clicked():
 	print(inventory.items)
 	inventoryUI.get_child(2).visible = true
 	key3.queue_free()
+	allKeys += 1
 
 func key4_clicked():
 	print("Key 4 has been picked up")
@@ -87,6 +90,7 @@ func key4_clicked():
 	print(inventory.items)
 	inventoryUI.get_child(3).visible = true
 	key4.queue_free()
+	allKeys += 1
 	
 
 func key5_clicked():
@@ -96,11 +100,15 @@ func key5_clicked():
 	print(inventory.items)
 	inventoryUI.get_child(4).visible = true
 	key5.queue_free()
+	allKeys += 1
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("toggle_inventory"):
 		print("Inventory has been toggled tab has been pressed")
+		if boxOpen == true and insideBox != null and allKeys == 5:
+			# boxOpenSprite.queue_free()
+			insideBox.queue_free()
 		toggle_ui_visibility()
 		
 func toggle_ui_visibility():
@@ -121,6 +129,11 @@ func _on_key_2_key_touching_door():
 
 func _on_key_3_key_touching_door():
 	print("Looks like you found the right key")
+	doorSprite.texture = new_texture
+	inventory.items.clear()
+	await get_tree().create_timer(1.0).timeout
+	fadeOut.visible = true
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Scenes/Hallway.tscn")
 
 

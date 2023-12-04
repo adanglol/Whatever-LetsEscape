@@ -12,12 +12,12 @@ config_version=5
 
 config/name="Whatever-lets Escape"
 run/main_scene="res://Scenes/menu.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-TimerManager="*res://Scripts/Gameplay/Timer.gd"
+TimerManager="*res://Scripts/Timer.gd"
 Inventory="*res://Scripts/Gameplay/Inventory.gd"
 Global="*res://Scripts/Drag/global.gd"
 

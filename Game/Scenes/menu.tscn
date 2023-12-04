@@ -1,11 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbr30pcbr0ubn"]
+[gd_scene load_steps=6 format=3 uid="uid://cbr30pcbr0ubn"]
 
-[ext_resource type="Script" path="res://Scripts/UI/MenuScript.gd" id="1_h1fks"]
-
-[sub_resource type="Theme" id="Theme_a34o1"]
-default_font_size = 170
-
-[sub_resource type="Theme" id="Theme_8fdyj"]
+[ext_resource type="Texture2D" uid="uid://bdidk2kasq0pj" path="res://Assets/Menu/PLAY.png" id="2_jdfpj"]
+[ext_resource type="Texture2D" uid="uid://l28flgdauf20" path="res://Assets/Menu/MenuAsset.png" id="2_yb0ll"]
+[ext_resource type="Script" path="res://Scripts/UI/MenuScript.gd" id="3_g77mp"]
+[ext_resource type="Texture2D" uid="uid://bekwl1ro200hx" path="res://Assets/Menu/CREDITS.png" id="4_kxw6h"]
+[ext_resource type="Texture2D" uid="uid://bqexd42ciq7af" path="res://Assets/Menu/QUIT.png" id="5_d1h2t"]
 
 [node name="menu" type="Node2D"]
 position = Vector2(3, -19)
@@ -17,31 +16,28 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0.478431, 0.341176, 0.411765, 1)
+[node name="Background" type="Sprite2D" parent="Control"]
+position = Vector2(954, 543)
+texture = ExtResource("2_yb0ll")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 49.0
-offset_right = 2047.0
-offset_bottom = 410.0
-theme = SubResource("Theme_a34o1")
-text = "Whatever, Let's Escape!"
+[node name="Play" type="Sprite2D" parent="Control"]
+position = Vector2(916, 369)
+scale = Vector2(0.29375, 0.323148)
+texture = ExtResource("2_jdfpj")
+script = ExtResource("3_g77mp")
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 287.0
-offset_top = 490.0
-offset_right = 1640.0
-offset_bottom = 847.0
-theme = SubResource("Theme_8fdyj")
-theme_override_font_sizes/font_size = 256
-text = "Start"
-script = ExtResource("1_h1fks")
+[node name="Credits" type="Sprite2D" parent="Control"]
+position = Vector2(922, 648)
+scale = Vector2(0.294, 0.332)
+texture = ExtResource("4_kxw6h")
+script = ExtResource("3_g77mp")
 
-[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[node name="Quit" type="Sprite2D" parent="Control"]
+position = Vector2(904, 943)
+scale = Vector2(0.294, 0.294)
+texture = ExtResource("5_d1h2t")
+script = ExtResource("3_g77mp")
+
+[connection signal="play_game" from="Control/Play" to="Control/Play" method="_on_play_game"]
+[connection signal="credits" from="Control/Credits" to="Control/Credits" method="_on_credits"]
+[connection signal="quit_game" from="Control/Quit" to="Control/Quit" method="_on_quit_game"]

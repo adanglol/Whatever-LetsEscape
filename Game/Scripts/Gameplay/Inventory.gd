@@ -4,6 +4,10 @@ extends Node
 signal item_added(item_id: String)
 signal item_removed(item_id: String)
 
+var gotGardenKey = false
+var gotBedroomKey = false
+var gotAltarKey = false
+
 # AutoLoad singleton
 func _ready():
 	set_process(false)  # Disable process, as it's not needed for an inventory
