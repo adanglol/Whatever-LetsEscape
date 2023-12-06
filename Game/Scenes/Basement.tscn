@@ -28,6 +28,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="Sprite2D" parent="Control"]
 position = Vector2(956, 538)
@@ -57,6 +58,7 @@ offset_top = 76.0
 offset_right = 1100.0
 offset_bottom = 724.0
 color = Color(0.113725, 0.0941176, 0.345098, 0.156863)
+metadata/_edit_use_anchors_ = true
 
 [node name="inventoryUI" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -71,6 +73,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_13vgg")
 theme_override_constants/separation = 35
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot1" type="ColorRect" parent="inventoryUI"]
 visible = false
@@ -221,22 +224,23 @@ scale = Vector2(0.428289, -0.295162)
 texture = ExtResource("10_oaye5")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1165.0
-offset_top = 21.0
-offset_right = 1920.0
-offset_bottom = 123.0
+offset_left = 1172.0
+offset_top = 16.0
+offset_right = 2337.0
+offset_bottom = 127.0
 theme_override_fonts/font = ExtResource("11_s8km3")
 theme_override_font_sizes/font_size = 81
 text = "Press Tab to access inventory "
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 1475.0
-offset_top = 91.0
-offset_right = 1888.0
-offset_bottom = 200.0
+offset_left = 1510.0
+offset_top = 106.0
+offset_right = 2032.0
+offset_bottom = 217.0
 theme_override_fonts/font = ExtResource("11_s8km3")
 theme_override_font_sizes/font_size = 81
 text = "5 keys 1 Door"
+metadata/_edit_use_anchors_ = true
 
 [node name="fadeOut" type="ColorRect" parent="."]
 visible = false

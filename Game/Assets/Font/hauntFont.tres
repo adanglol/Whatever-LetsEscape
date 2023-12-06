@@ -1,3 +1,6 @@
-[gd_resource type="FontVariation" format=3 uid="uid://dersaul2xw361"]
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dersaul2xw361"]
+
+[ext_resource type="FontFile" uid="uid://r2r3mwfa6fre" path="res://Assets/Font/SDHauntedHouse_demo.otf" id="1_n2wxy"]
 
 [resource]
+base_font = ExtResource("1_n2wxy")

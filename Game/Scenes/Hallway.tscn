@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://3ro222udd8ts"]
+[gd_scene load_steps=6 format=3 uid="uid://3ro222udd8ts"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/2D/Hallway.gd" id="1_rjx7t"]
 [ext_resource type="Texture2D" uid="uid://bqcr33g32esub" path="res://Assets/Basement/Door Lock.png" id="1_sxts4"]
 [ext_resource type="Texture2D" uid="uid://u1rl2w1af8ij" path="res://Assets/Hallway/EmptyHallway.png" id="2_oqbu1"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Item.gd" id="3_2vpjr"]
+[ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="5_bw2aw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rjx7t")
@@ -53,6 +54,17 @@ offset_top = -122.0
 offset_right = 2334.0
 offset_bottom = 1262.0
 color = Color(0, 0, 0, 1)
+
+[node name="doorText" type="Label" parent="."]
+visible = false
+offset_left = 47.0
+offset_top = -3.0
+offset_right = 1686.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("5_bw2aw")
+theme_override_font_sizes/font_size = 76
+text = "Looks like this door is locked. Seems like it needs a key of some sort!
+"
 
 [connection signal="clicked" from="GardenDoor" to="." method="_on_garden_door_clicked"]
 [connection signal="clicked" from="UpstairsDoor" to="." method="_on_upstairs_door_clicked"]

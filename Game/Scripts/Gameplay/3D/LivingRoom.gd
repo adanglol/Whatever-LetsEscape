@@ -1,14 +1,19 @@
 # living room where we discover lore and get key to garden
 
 extends Node3D
-var fadeOut = null
+
+
+#signal touch_door
+#var doorCollider : CollisionShape3D
+#var playerCollider : CollisionShape3D
 
 func _ready():
 	print("living room ready")
-	fadeOut = get_node("fadeOut")
+	# fadeOut = get_node("fadeOut")
+	#doorCollider = get_node("Door").get_node("StaticBody3D").get_node("DoorCollision")
+	#print(doorCollider)
+	#playerCollider = get_node("Player").get_node("PlayerCollision")
+	#print(playerCollider)
 
 
-# func _on_hallway_clicked():
-# 	fadeOut.visible = true
-# 	await get_tree().create_timer(1.0).timeout
-# 	get_tree().change_scene_to_file("res://scenes/Hallway.tscn")
+

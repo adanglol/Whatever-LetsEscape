@@ -24,10 +24,12 @@ color = Color(0.505882, 0.517647, 0.45098, 1)
 [node name="BedroomDoor" type="Sprite2D" parent="."]
 position = Vector2(348, 361)
 texture = ExtResource("1_l4sjp")
+script = ExtResource("3_5ekxa")
 
 [node name="AltarDoor" type="Sprite2D" parent="."]
 position = Vector2(1515, 365)
 texture = ExtResource("1_l4sjp")
+script = ExtResource("3_5ekxa")
 
 [node name="Downstairs" type="Sprite2D" parent="."]
 position = Vector2(906, 883)
@@ -35,4 +37,6 @@ scale = Vector2(1, 0.6075)
 texture = ExtResource("1_l4sjp")
 script = ExtResource("3_5ekxa")
 
+[connection signal="clicked" from="BedroomDoor" to="." method="_on_bedroom_door_clicked"]
+[connection signal="clicked" from="AltarDoor" to="." method="_on_altar_door_clicked"]
 [connection signal="clicked" from="Downstairs" to="." method="_on_downstairs_clicked"]
