@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbr30pcbr0ubn"]
+[gd_scene load_steps=7 format=3 uid="uid://cbr30pcbr0ubn"]
 
 [ext_resource type="Texture2D" uid="uid://bdidk2kasq0pj" path="res://Assets/Menu/PLAY.png" id="2_jdfpj"]
 [ext_resource type="Texture2D" uid="uid://l28flgdauf20" path="res://Assets/Menu/MenuAsset.png" id="2_yb0ll"]
 [ext_resource type="Script" path="res://Scripts/UI/MenuScript.gd" id="3_g77mp"]
 [ext_resource type="Texture2D" uid="uid://bekwl1ro200hx" path="res://Assets/Menu/CREDITS.png" id="4_kxw6h"]
 [ext_resource type="Texture2D" uid="uid://bqexd42ciq7af" path="res://Assets/Menu/QUIT.png" id="5_d1h2t"]
+[ext_resource type="Texture2D" uid="uid://2w2te8itvgci" path="res://Assets/Menu/TITLE (1).png" id="6_5wfqs"]
 
 [node name="menu" type="Node2D"]
 position = Vector2(3, -19)
@@ -21,22 +22,27 @@ position = Vector2(954, 543)
 texture = ExtResource("2_yb0ll")
 
 [node name="Play" type="Sprite2D" parent="Control"]
-position = Vector2(916, 369)
+position = Vector2(918, 595)
 scale = Vector2(0.29375, 0.323148)
 texture = ExtResource("2_jdfpj")
 script = ExtResource("3_g77mp")
 
 [node name="Credits" type="Sprite2D" parent="Control"]
-position = Vector2(922, 648)
+position = Vector2(921, 787)
 scale = Vector2(0.294, 0.332)
 texture = ExtResource("4_kxw6h")
 script = ExtResource("3_g77mp")
 
 [node name="Quit" type="Sprite2D" parent="Control"]
-position = Vector2(904, 943)
+position = Vector2(914, 982)
 scale = Vector2(0.294, 0.294)
 texture = ExtResource("5_d1h2t")
 script = ExtResource("3_g77mp")
+
+[node name="Title" type="Sprite2D" parent="Control"]
+position = Vector2(928, 282)
+scale = Vector2(0.530556, 0.530556)
+texture = ExtResource("6_5wfqs")
 
 [connection signal="play_game" from="Control/Play" to="Control/Play" method="_on_play_game"]
 [connection signal="credits" from="Control/Credits" to="Control/Credits" method="_on_credits"]

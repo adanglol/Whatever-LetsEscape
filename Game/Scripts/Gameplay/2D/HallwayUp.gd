@@ -5,6 +5,7 @@ extends Node2D
 var downstairs = null
 var bedroomDoor = null
 var altarDoor = null
+var inventory = Inventory
 
 func _ready():
 	print("Hallway Script Running")
@@ -19,8 +20,14 @@ func _on_downstairs_clicked():
 
 
 func _on_bedroom_door_clicked():
-	pass # Replace with function body.
+	if inventory.gotBedroomKey == true:
+		get_tree().change_scene_to_file("res://Scenes/Bedroom.tscn")
+	else:
+		print("looks like the door is locked")
 
 
 func _on_altar_door_clicked():
-	pass # Replace with function body.
+	if inventory.gotAltarKey == true:
+		get_tree().change_scene_to_file("res://Scenes/Altar.tscn")
+	else:
+		print("Looks like door is locked")

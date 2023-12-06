@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var SPRINT_SPEED = 10.0
 var inventory = Inventory
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -39,8 +40,12 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_foward", "move_back")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		if Input.is_action_pressed("sprint"):
+			velocity.x = direction.x * SPRINT_SPEED
+			velocity.z = direction.z * SPRINT_SPEED
+		else:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

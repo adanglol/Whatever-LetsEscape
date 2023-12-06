@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://fgqgvvytr563"]
+
+[ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="1_hmqw3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.615686, 0.615686, 0.615686, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 743.0
+offset_top = -29.0
+offset_right = 1168.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_hmqw3")
+theme_override_font_sizes/font_size = 251
+text = "ALTAR"
