@@ -26,7 +26,7 @@ func _on_bedroom_door_clicked():
 		get_tree().change_scene_to_file("res://Scenes/Bedroom.tscn")
 	else:
 		print("looks like the door is locked")
-		get_node("Locked").visble = true
+		get_node("Locked").visible = true
 		await get_tree().create_timer(2.0).timeout
 		get_node("Locked").visible = false
 
