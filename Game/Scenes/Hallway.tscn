@@ -66,6 +66,16 @@ theme_override_font_sizes/font_size = 76
 text = "Looks like this door is locked. Seems like it needs a key of some sort!
 "
 
+[node name="doorText2" type="Label" parent="."]
+visible = false
+offset_left = 31.0
+offset_top = -5.0
+offset_right = 1670.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("5_bw2aw")
+theme_override_font_sizes/font_size = 76
+text = "Seems like the key I grabbed fits."
+
 [connection signal="clicked" from="GardenDoor" to="." method="_on_garden_door_clicked"]
 [connection signal="clicked" from="UpstairsDoor" to="." method="_on_upstairs_door_clicked"]
 [connection signal="clicked" from="LivingRoomDoor" to="." method="_on_living_room_door_clicked"]

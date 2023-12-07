@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://wvreytf45i61"]
+[gd_scene load_steps=3 format=3 uid="uid://wvreytf45i61"]
 
-[sub_resource type="Theme" id="Theme_g7tjd"]
+[ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="1_bpf6h"]
+[ext_resource type="Script" path="res://Scripts/UI/ButtonHome.gd" id="2_4be62"]
 
 [node name="Node2D" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-399.0]
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -18,14 +20,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.443137, 0.52549, 0.623529, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 763.0
-offset_top = 74.0
-offset_right = 1270.0
-offset_bottom = 243.0
-theme = SubResource("Theme_g7tjd")
-theme_override_font_sizes/normal_font_size = 76
-text = "Game Over"
+offset_left = 66.0
+offset_top = 77.0
+offset_right = 1899.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("1_bpf6h")
+theme_override_font_sizes/font_size = 65
+text = "As the passage of time continued you noticed that there was a unknown bracelet
+ of some sort going off stabbing and injecting some sort of liquid. Perhaps figuring out
+where you are and how you ended up here may never be known..."
+
+[node name="Button" type="Button" parent="."]
+offset_left = 376.0
+offset_top = 715.0
+offset_right = 1537.0
+offset_bottom = 842.0
+theme_override_fonts/font = ExtResource("1_bpf6h")
+theme_override_font_sizes/font_size = 131
+text = "Next"
+script = ExtResource("2_4be62")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

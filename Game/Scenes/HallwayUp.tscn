@@ -1,41 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct8xvsth6jkj3"]
+[gd_scene load_steps=6 format=3 uid="uid://ct8xvsth6jkj3"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/2D/HallwayUp.gd" id="1_82c0y"]
 [ext_resource type="Texture2D" uid="uid://bqcr33g32esub" path="res://Assets/Basement/Door Lock.png" id="1_l4sjp"]
+[ext_resource type="Texture2D" uid="uid://bd4o1gxh03lvv" path="res://Assets/Hallway/EmptyUpStairsHallway.png" id="2_iauob"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Item.gd" id="3_5ekxa"]
+[ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="5_d4rva"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_82c0y")
 
-[node name="Control" type="Control" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.505882, 0.517647, 0.45098, 1)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(962, 542)
+texture = ExtResource("2_iauob")
 
 [node name="BedroomDoor" type="Sprite2D" parent="."]
-position = Vector2(348, 361)
+position = Vector2(148, 431)
+scale = Vector2(0.80375, 0.855625)
 texture = ExtResource("1_l4sjp")
 script = ExtResource("3_5ekxa")
 
 [node name="AltarDoor" type="Sprite2D" parent="."]
-position = Vector2(1515, 365)
+position = Vector2(1641, 401)
+scale = Vector2(0.82375, 0.86125)
 texture = ExtResource("1_l4sjp")
 script = ExtResource("3_5ekxa")
 
 [node name="Downstairs" type="Sprite2D" parent="."]
-position = Vector2(906, 883)
-scale = Vector2(1, 0.6075)
+position = Vector2(924, 881)
+scale = Vector2(1.02875, 0.6075)
 texture = ExtResource("1_l4sjp")
 script = ExtResource("3_5ekxa")
+
+[node name="Locked" type="Label" parent="."]
+visible = false
+offset_left = 154.0
+offset_top = -14.0
+offset_right = 1763.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("5_d4rva")
+theme_override_font_sizes/font_size = 96
+text = "Looks like door is locked needs a key of some sorts..."
+
+[node name="Unlocked" type="Label" parent="."]
+visible = false
+offset_left = 422.0
+offset_top = -8.0
+offset_right = 1485.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("5_d4rva")
+theme_override_font_sizes/font_size = 96
+text = "Hmm looks like the key I grab fits."
 
 [connection signal="clicked" from="BedroomDoor" to="." method="_on_bedroom_door_clicked"]
 [connection signal="clicked" from="AltarDoor" to="." method="_on_altar_door_clicked"]

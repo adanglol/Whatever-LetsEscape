@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cql6726bdg27y"]
+
+[ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="1_05tdl"]
+[ext_resource type="Script" path="res://Scripts/UI/BackMenuButton.gd" id="2_tgrqr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 702.0
+offset_top = -31.0
+offset_right = 1444.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("1_05tdl")
+theme_override_font_sizes/font_size = 250
+text = "Credits"
+
+[node name="Title2" type="Label" parent="."]
+offset_left = 267.0
+offset_top = 217.0
+offset_right = 1670.0
+offset_bottom = 1011.0
+theme_override_fonts/font = ExtResource("1_05tdl")
+theme_override_font_sizes/font_size = 70
+text = "Miles Anderson (3D artist: Living Room)
+Aaron Dangc (Programmer)
+Andrew Do (2D artist: Basement)
+Pichy Jumpholwong (Producer, 2D artist: Bedroom, Altar Room)
+Hilton Mai (Programmer)
+Zac Nakamura (Producer, 2D artist: Main Menu)
+Aakaash Narayannan (2D artist: Hallways)
+Ami Prajapati (3D artist: Garden)"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 35.0
+offset_top = 879.0
+offset_right = 402.0
+offset_bottom = 1049.0
+theme_override_fonts/font = ExtResource("1_05tdl")
+theme_override_font_sizes/font_size = 146
+text = "Back"
+script = ExtResource("2_tgrqr")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

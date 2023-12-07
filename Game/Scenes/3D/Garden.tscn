@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b0pb42sm3omgm"]
+[gd_scene load_steps=27 format=3 uid="uid://b0pb42sm3omgm"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/3D/Garden.gd" id="1_tnq6s"]
 [ext_resource type="Script" path="res://Scenes/3D/player/player.gd" id="1_w7h63"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c4i0m677t8qlc" path="res://Assets/Garden/garden key.glb" id="7_318rh"]
 [ext_resource type="Texture2D" uid="uid://e27qonfyh53f" path="res://Assets/Garden/foggy-forest-landscape.jpg" id="7_i6o0q"]
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="10_npiwn"]
+[ext_resource type="PackedScene" uid="uid://biy5ltm2jryrw" path="res://Assets/Garden/artg 170 escape room dirt mound 1.glb" id="10_ocwgk"]
+[ext_resource type="PackedScene" uid="uid://ckm31n5o1fdu5" path="res://Assets/Garden/artg 170 escape room dirt mound top 1.glb" id="11_yqa0q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8d66a"]
 sky_top_color = Color(0.2, 0.243137, 0.305882, 1)
@@ -56,7 +58,10 @@ size = Vector3(7.52838, 1, 8.21143)
 size = Vector3(6.5, 1.09, 4.655)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7uj5q"]
-size = Vector3(5.98, 1.835, 5.645)
+size = Vector3(3.545, 1.5, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnbt1"]
+size = Vector3(5, 2, 5)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_tnq6s")
@@ -75,7 +80,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.197519, 0)
 
 [node name="garden bee smoker" parent="." instance=ExtResource("6_nkc5c")]
-transform = Transform3D(-0.365868, -0.930217, 0.0289407, 0.930667, -0.365691, 0.0113773, 8.85881e-10, 0.0310967, 0.999516, 1.77106, 16.3552, -16.233)
+transform = Transform3D(-0.365868, -0.930217, 0.0289407, -0.186293, 0.0427336, -0.981564, 0.911831, -0.364514, -0.188928, -26.241, 1.39883, 13.8827)
 
 [node name="garden key" parent="." instance=ExtResource("7_318rh")]
 transform = Transform3D(0.983277, -7.96052e-09, 0.182115, -0.182115, -4.29804e-08, 0.983277, 0, -1, -4.37114e-08, -1.3727, -3.08927, 12.2193)
@@ -189,6 +194,32 @@ theme_override_fonts/font = ExtResource("10_npiwn")
 theme_override_font_sizes/font_size = 66
 text = "Looks there was a key in the beehive looks like its important guess I will stash it for now."
 
+[node name="HiveText" type="Label" parent="PlayerNode/Player/Neck/Camera3D"]
+visible = false
+offset_left = 28.0
+offset_top = 14.0
+offset_right = 279.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("10_npiwn")
+theme_override_font_sizes/font_size = 121
+text = "A beehive?"
+
+[node name="DigText" type="Label" parent="PlayerNode/Player/Neck/Camera3D"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("10_npiwn")
+theme_override_font_sizes/font_size = 121
+text = "Looks like a mound press E to dig!"
+
+[node name="DigText2" type="Label" parent="PlayerNode/Player/Neck/Camera3D"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("10_npiwn")
+theme_override_font_sizes/font_size = 121
+text = "Looks like I need something to dig with?"
+
 [node name="ShovelArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0694, 1.09673, 8.07619)
 
@@ -204,15 +235,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.02, 2.037, 1.469)
 shape = SubResource("BoxShape3D_rmk7k")
 
 [node name="BeeSmokerArea" type="Area3D" parent="."]
-transform = Transform3D(0.999889, 0, -0.0148871, 0, 1, 0, 0.0148871, 0, 0.999889, -10.2447, -0.594097, -17.9517)
+transform = Transform3D(0.999889, 0, -0.0148871, 0, 1, 0, 0.0148871, 0, 0.999889, -29.3775, -0.594097, 13.4454)
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BeeSmokerArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3235, 3.98851, 6.7619)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95102, 5.28644, -13.0686)
 shape = SubResource("BoxShape3D_7uj5q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2143, 14.0039, 2.21314)
+light_energy = 3.274
+omni_range = 7.491
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5117, 2.09764, 6.74052)
 light_energy = 3.274
 omni_range = 7.491
 
@@ -222,6 +258,136 @@ visible = false
 light_energy = 3.274
 omni_range = 7.491
 
+[node name="DirtMoundSevenBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.575, 0.10828, -10.0827)
+
+[node name="DirtMoundSixthBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49697, 0, -10.0827)
+
+[node name="DirtMoundFourthBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9949, 0, -10.0827)
+
+[node name="DirtMoundThirdBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.823, 0, -10.0827)
+
+[node name="DirtMoundNineBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5139, 0, 23.7199)
+
+[node name="DirtMoundTenBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71554, 0, 23.9133)
+
+[node name="DirtMoundEightBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2439, 0, 6.44536)
+
+[node name="DirtMoundFirstBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8351, 0, 0.404714)
+
+[node name="DirtMoundSecondBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9259, 0, -0.671661)
+
+[node name="DirtMoundFifthBottom" parent="." instance=ExtResource("10_ocwgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03645, 0, -1.20527)
+
+[node name="DirtMoundSevenTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0265, 0, -10.2307)
+
+[node name="DirtMoundSixthTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73643, 0, -10.2307)
+
+[node name="DirtMoundFourthTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9308, 0, -10.2307)
+
+[node name="DirtMoundThirdTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9575, 0, -10.2307)
+
+[node name="DirtMoundFirstTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8647, 0, -0.0858612)
+
+[node name="DirtMoundSecondTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8416, 0, -0.945462)
+
+[node name="DirtMoundFifthTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68031, 0, -1.23845)
+
+[node name="DirtMoundTenTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16576, 0, 23.9833)
+
+[node name="DirtMoundNineTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8647, 0, 23.9833)
+
+[node name="DirtMoundEightTop" parent="." instance=ExtResource("11_yqa0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5038, 0, 6.03852)
+
+[node name="MoundArea1" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328344, 0.486721, 3.77404)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2092, 0.486721, 2.86534)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00881, 0.486721, -6.5276)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1308, 0.486721, -6.41814)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea5" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2982, 0.486721, 2.86534)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea6" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8762, 0.486721, -6.40333)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea7" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.98, 0.486721, -6.04785)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea8" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6217, 0.486721, 10.2484)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea9" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.7566, 0.486721, 27.6571)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
+[node name="MoundArea10" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4493, 0.486721, 27.6275)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoundArea10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
+shape = SubResource("BoxShape3D_lnbt1")
+
 [connection signal="body_entered" from="Door" to="PlayerNode/Player" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="ShovelArea" to="PlayerNode/Player" method="_on_shovel_area_body_entered"]
 [connection signal="body_exited" from="ShovelArea" to="PlayerNode/Player" method="_on_shovel_area_body_exited"]
@@ -229,3 +395,23 @@ omni_range = 7.491
 [connection signal="body_exited" from="TreeArea" to="PlayerNode/Player" method="_on_tree_area_body_exited"]
 [connection signal="body_entered" from="BeeSmokerArea" to="PlayerNode/Player" method="_on_bee_smoker_area_body_entered"]
 [connection signal="body_exited" from="BeeSmokerArea" to="PlayerNode/Player" method="_on_bee_smoker_area_body_exited"]
+[connection signal="body_entered" from="MoundArea1" to="PlayerNode/Player" method="_on_mound_area_1_body_entered"]
+[connection signal="body_exited" from="MoundArea1" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea2" to="PlayerNode/Player" method="_on_mound_area_2_body_entered"]
+[connection signal="body_exited" from="MoundArea2" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea3" to="PlayerNode/Player" method="_on_mound_area_3_body_entered"]
+[connection signal="body_exited" from="MoundArea3" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea4" to="PlayerNode/Player" method="_on_mound_area_4_body_entered"]
+[connection signal="body_exited" from="MoundArea4" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea5" to="PlayerNode/Player" method="_on_mound_area_5_body_entered"]
+[connection signal="body_exited" from="MoundArea5" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea6" to="PlayerNode/Player" method="_on_mound_area_6_body_entered"]
+[connection signal="body_exited" from="MoundArea6" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea7" to="PlayerNode/Player" method="_on_mound_area_7_body_entered"]
+[connection signal="body_exited" from="MoundArea7" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea8" to="PlayerNode/Player" method="_on_mound_area_8_body_entered"]
+[connection signal="body_exited" from="MoundArea8" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea9" to="PlayerNode/Player" method="_on_mound_area_9_body_entered"]
+[connection signal="body_exited" from="MoundArea9" to="PlayerNode/Player" method="_on_mound_area_body_exited"]
+[connection signal="body_entered" from="MoundArea10" to="PlayerNode/Player" method="_on_mound_area_10_body_entered"]
+[connection signal="body_exited" from="MoundArea10" to="PlayerNode/Player" method="_on_mound_area_body_exited"]

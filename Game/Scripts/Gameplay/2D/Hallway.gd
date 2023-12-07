@@ -26,6 +26,7 @@ func _on_garden_door_clicked():
 		doorText.visible = false
 	elif inventory.gotGardenKey == true:
 		print("Looks like the key fits")
+		get_node("doorText2").visible = true
 		await get_tree().create_timer(1.0).timeout
 		fadeOut.visible = true
 		await get_tree().create_timer(1.0).timeout	

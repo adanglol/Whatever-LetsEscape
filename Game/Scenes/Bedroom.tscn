@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqjbctldww01b"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/2D/Bedroom.gd" id="1_7rmb4"]
-[ext_resource type="Texture2D" uid="uid://dcp2oc48ibne2" path="res://Assets/Bedroom/bedroom_wip (1).png" id="1_357gr"]
 [ext_resource type="Texture2D" uid="uid://d4dqq1iiuqhmw" path="res://Assets/Bedroom/glass.png" id="2_1vd83"]
+[ext_resource type="Texture2D" uid="uid://qg3of65u3fam" path="res://Assets/Bedroom/updated_bedroom.png" id="2_avem1"]
 [ext_resource type="Texture2D" uid="uid://dhea48n1vcm8" path="res://Assets/Bedroom/key.png" id="3_s54fg"]
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="4_fivx5"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Item.gd" id="4_nsqqy"]
@@ -19,17 +19,17 @@ offset_bottom = 40.0
 
 [node name="Bedroom" type="Sprite2D" parent="."]
 position = Vector2(960, 541)
-texture = ExtResource("1_357gr")
+texture = ExtResource("2_avem1")
 
 [node name="Glass" type="Sprite2D" parent="."]
-position = Vector2(1858, 719)
+position = Vector2(463, 692)
 scale = Vector2(0.112061, 0.112061)
 texture = ExtResource("2_1vd83")
 script = ExtResource("4_nsqqy")
 
 [node name="Key" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1861, 765)
+position = Vector2(466, 741)
 scale = Vector2(0.0546875, 0.0449218)
 texture = ExtResource("3_s54fg")
 script = ExtResource("4_nsqqy")
@@ -39,7 +39,7 @@ offset_left = 296.0
 offset_top = -15.0
 offset_right = 1553.0
 offset_bottom = 107.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_fivx5")
 theme_override_font_sizes/font_size = 91
 text = "Looks like there is something on that table?"

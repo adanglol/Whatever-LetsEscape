@@ -49,12 +49,11 @@ func get_time():
 
 # Handle timeout behavior
 func handle_timeout():
+	await get_tree().create_timer(1.0).timeout
 	print("Game Over! Time's up!")
 	emit_signal("timeout_signal")  # Emit the timeout signal
-	# get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 	
-
-
 
 #  --------------------------------------------------------------------------------
 # Implementation of timer using floats 

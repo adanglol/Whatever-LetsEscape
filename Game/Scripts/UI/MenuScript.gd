@@ -30,16 +30,19 @@ func _input(event):
 func _on_play_game():
 	print("Play Game!")
 	# change scene
-	get_tree().change_scene_to_file("res://Scenes/Basement.tscn")	
-	# Access TimerSingleton and start the timer
-	var timer_singleton = TimerManager
-	timer_singleton.start_timer(5)
+	get_tree().change_scene_to_file("res://Scenes/Intro.tscn")	
+
 
 
 func _on_credits():
 	print("Credits!")
+	get_tree().change_scene_to_file("res://Scenes/Credits.tscn")	
 
 
 func _on_quit_game():
 	print("Quit Game")
 	get_tree().quit()
+	
+
+
+

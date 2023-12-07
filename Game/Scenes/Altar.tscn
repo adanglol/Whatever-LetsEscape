@@ -1,21 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://fgqgvvytr563"]
+[gd_scene load_steps=4 format=3 uid="uid://fgqgvvytr563"]
 
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="1_hmqw3"]
+[ext_resource type="Texture2D" uid="uid://bevkkpnhfid73" path="res://Assets/Altar/altar.png" id="1_ojrgo"]
+[ext_resource type="Script" path="res://Scripts/UI/Button.gd" id="3_ib4o5"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.615686, 0.615686, 0.615686, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 539)
+texture = ExtResource("1_ojrgo")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 743.0
-offset_top = -29.0
-offset_right = 1168.0
-offset_bottom = 314.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 15.0
+offset_top = -7.0
+offset_right = 1932.0
+offset_bottom = 403.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.141176)
 theme_override_fonts/font = ExtResource("1_hmqw3")
-theme_override_font_sizes/font_size = 251
-text = "ALTAR"
+theme_override_font_sizes/font_size = 79
+text = "Took me a lot to get here. This bracelet on my ankle the pentagram, 
+the cross,the blood! Where did they all go?
+ All doors on outside are locked guess there really was no means to escape.
+ The more I try to put things together the more questions 
+I have guess this is goodbye from one lifetime to the next..."
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1426.0
+offset_top = 854.0
+offset_right = 1875.0
+offset_bottom = 1021.0
+theme_override_fonts/font = ExtResource("1_hmqw3")
+theme_override_font_sizes/font_size = 81
+text = "End"
+script = ExtResource("3_ib4o5")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
