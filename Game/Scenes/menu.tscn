@@ -19,7 +19,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="Background" type="Sprite2D" parent="Control"]
-position = Vector2(954, 543)
+position = Vector2(957, 560)
 texture = ExtResource("2_yb0ll")
 
 [node name="Play" type="Sprite2D" parent="Control"]
