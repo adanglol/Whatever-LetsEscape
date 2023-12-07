@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://3ro222udd8ts"]
+[gd_scene load_steps=7 format=3 uid="uid://3ro222udd8ts"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/2D/Hallway.gd" id="1_rjx7t"]
 [ext_resource type="Texture2D" uid="uid://bqcr33g32esub" path="res://Assets/Basement/Door Lock.png" id="1_sxts4"]
 [ext_resource type="Texture2D" uid="uid://u1rl2w1af8ij" path="res://Assets/Hallway/EmptyHallway.png" id="2_oqbu1"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Item.gd" id="3_2vpjr"]
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="5_bw2aw"]
+[ext_resource type="AudioStream" uid="uid://gm4lqwn8ivsf" path="res://Assets/Music/BGM/grim-atmosphere-176998.mp3" id="6_5ug4q"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rjx7t")
@@ -75,6 +76,10 @@ offset_bottom = 98.0
 theme_override_fonts/font = ExtResource("5_bw2aw")
 theme_override_font_sizes/font_size = 76
 text = "Seems like the key I grabbed fits."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5ug4q")
+autoplay = true
 
 [connection signal="clicked" from="GardenDoor" to="." method="_on_garden_door_clicked"]
 [connection signal="clicked" from="UpstairsDoor" to="." method="_on_upstairs_door_clicked"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqjbctldww01b"]
+[gd_scene load_steps=8 format=3 uid="uid://bqjbctldww01b"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/2D/Bedroom.gd" id="1_7rmb4"]
 [ext_resource type="Texture2D" uid="uid://d4dqq1iiuqhmw" path="res://Assets/Bedroom/glass.png" id="2_1vd83"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhea48n1vcm8" path="res://Assets/Bedroom/key.png" id="3_s54fg"]
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="4_fivx5"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Item.gd" id="4_nsqqy"]
+[ext_resource type="AudioStream" uid="uid://qgjwoyog33l2" path="res://Assets/Music/BGM/dramatic-piano-175502.mp3" id="7_0s6cq"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7rmb4")
@@ -61,6 +62,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_fivx5")
 theme_override_font_sizes/font_size = 80
 text = "Looks like got key seems like there is nothing left here to do."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0s6cq")
+autoplay = true
 
 [connection signal="clicked" from="Glass" to="." method="_on_glass_clicked"]
 [connection signal="clicked" from="Key" to="." method="_on_key_clicked"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ckvvioel8njrg"]
+[gd_scene load_steps=32 format=3 uid="uid://ckvvioel8njrg"]
 
 [ext_resource type="Script" path="res://Scenes/3D/player/player.gd" id="1_m6s5e"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/3D/LivingRoom.gd" id="1_tqiwh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://jqtuo4m54e4r" path="res://Scenes/3D/player/shader/doorCol.jpg" id="3_f03e2"]
 [ext_resource type="Texture2D" uid="uid://brj6jdgbo1j54" path="res://Scenes/3D/player/shader/wood.jpg" id="5_ogbvi"]
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="7_7tub5"]
+[ext_resource type="AudioStream" uid="uid://4qiy5tndpae4" path="res://Assets/Music/BGM/mystical-music-box-for-spooky-175971.mp3" id="8_g1ipe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ykkny"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -262,6 +263,11 @@ offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("7_7tub5")
 theme_override_font_sizes/font_size = 90
 text = "Looks like a book has a key seems like this will come in handy"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_g1ipe")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="body_entered" from="Door" to="PlayerNode/Player" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Book" to="PlayerNode/Player" method="_on_book_body_entered"]

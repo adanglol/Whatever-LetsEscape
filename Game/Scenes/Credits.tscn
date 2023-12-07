@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cql6726bdg27y"]
+[gd_scene load_steps=4 format=3 uid="uid://cql6726bdg27y"]
 
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="1_05tdl"]
 [ext_resource type="Script" path="res://Scripts/UI/BackMenuButton.gd" id="2_tgrqr"]
+[ext_resource type="AudioStream" uid="uid://d3kxcl6rela35" path="res://Assets/Music/BGM/Main Menu Music.mp3" id="3_kpuln"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -46,5 +47,9 @@ theme_override_fonts/font = ExtResource("1_05tdl")
 theme_override_font_sizes/font_size = 146
 text = "Back"
 script = ExtResource("2_tgrqr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kpuln")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

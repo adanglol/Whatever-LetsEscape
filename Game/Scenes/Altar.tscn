@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fgqgvvytr563"]
+[gd_scene load_steps=5 format=3 uid="uid://fgqgvvytr563"]
 
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="1_hmqw3"]
 [ext_resource type="Texture2D" uid="uid://bevkkpnhfid73" path="res://Assets/Altar/altar.png" id="1_ojrgo"]
 [ext_resource type="Script" path="res://Scripts/UI/Button.gd" id="3_ib4o5"]
+[ext_resource type="AudioStream" uid="uid://dmukx357mxdlq" path="res://Assets/Music/BGM/midnight-123895.mp3" id="4_0k6sm"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,11 +19,12 @@ offset_bottom = 403.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.141176)
 theme_override_fonts/font = ExtResource("1_hmqw3")
 theme_override_font_sizes/font_size = 79
-text = "Took me a lot to get here. This bracelet on my ankle the pentagram, 
-the cross,the blood! Where did they all go?
- All doors on outside are locked guess there really was no means to escape.
- The more I try to put things together the more questions 
-I have guess this is goodbye from one lifetime to the next..."
+text = "It took me a lot to get here. This bracelet on my ankle the pentagram, 
+the cross, the blood! Where did they all go?
+All doors to the outside are locked, so I guess there really are
+no means to escape.
+The more I try to put things together, the more questions I have.
+I guess this is goodbye from one lifetime to the next..."
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1426.0
@@ -33,5 +35,9 @@ theme_override_fonts/font = ExtResource("1_hmqw3")
 theme_override_font_sizes/font_size = 81
 text = "End"
 script = ExtResource("3_ib4o5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0k6sm")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

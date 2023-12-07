@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbr30pcbr0ubn"]
+[gd_scene load_steps=8 format=3 uid="uid://cbr30pcbr0ubn"]
 
 [ext_resource type="Texture2D" uid="uid://bdidk2kasq0pj" path="res://Assets/Menu/PLAY.png" id="2_jdfpj"]
 [ext_resource type="Texture2D" uid="uid://l28flgdauf20" path="res://Assets/Menu/MenuAsset.png" id="2_yb0ll"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bekwl1ro200hx" path="res://Assets/Menu/CREDITS.png" id="4_kxw6h"]
 [ext_resource type="Texture2D" uid="uid://bqexd42ciq7af" path="res://Assets/Menu/QUIT.png" id="5_d1h2t"]
 [ext_resource type="Texture2D" uid="uid://2w2te8itvgci" path="res://Assets/Menu/TITLE (1).png" id="6_5wfqs"]
+[ext_resource type="AudioStream" uid="uid://d3kxcl6rela35" path="res://Assets/Music/BGM/Main Menu Music.mp3" id="7_mxoj5"]
 
 [node name="menu" type="Node2D"]
 position = Vector2(3, -19)
@@ -43,6 +44,10 @@ script = ExtResource("3_g77mp")
 position = Vector2(928, 282)
 scale = Vector2(0.530556, 0.530556)
 texture = ExtResource("6_5wfqs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_mxoj5")
+autoplay = true
 
 [connection signal="play_game" from="Control/Play" to="Control/Play" method="_on_play_game"]
 [connection signal="credits" from="Control/Credits" to="Control/Credits" method="_on_credits"]

@@ -18,11 +18,12 @@ offset_right = 2688.0
 offset_bottom = 783.0
 theme_override_fonts/font = ExtResource("1_yaj71")
 theme_override_font_sizes/font_size = 81
-text = "With no memory of how you ended up here, 
+text = "You have found yourself within a dreary basement of a strange house.
+With no memory of how you ended up here, 
 you must navigate this house's eerie corridors and rooms by solving cryptic 
 puzzles.
 
- Unravel the dark secrets of the past while trying to escape the unknown 
+Unravel the dark secrets of the past while trying to escape the unknown 
 of each room you encounter. "
 
 [node name="Button" type="Button" parent="."]

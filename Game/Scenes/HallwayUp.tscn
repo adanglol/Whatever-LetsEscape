@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct8xvsth6jkj3"]
+[gd_scene load_steps=7 format=3 uid="uid://ct8xvsth6jkj3"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/2D/HallwayUp.gd" id="1_82c0y"]
 [ext_resource type="Texture2D" uid="uid://bqcr33g32esub" path="res://Assets/Basement/Door Lock.png" id="1_l4sjp"]
 [ext_resource type="Texture2D" uid="uid://bd4o1gxh03lvv" path="res://Assets/Hallway/EmptyUpStairsHallway.png" id="2_iauob"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Item.gd" id="3_5ekxa"]
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="5_d4rva"]
+[ext_resource type="AudioStream" uid="uid://br1ickp065tvq" path="res://Assets/Music/BGM/suspense-atmosphere-background-175969.mp3" id="6_hdht6"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_82c0y")
@@ -50,6 +51,10 @@ offset_bottom = 121.0
 theme_override_fonts/font = ExtResource("5_d4rva")
 theme_override_font_sizes/font_size = 96
 text = "Hmm looks like the key I grab fits."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hdht6")
+autoplay = true
 
 [connection signal="clicked" from="BedroomDoor" to="." method="_on_bedroom_door_clicked"]
 [connection signal="clicked" from="AltarDoor" to="." method="_on_altar_door_clicked"]
