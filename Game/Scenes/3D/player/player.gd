@@ -5,6 +5,11 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var SPRINT_SPEED = 10.0
 var inventory = Inventory
+var hasShovel = false
+var inShovelArea = false
+var hasBeeSmoker = false
+var inBeeSmokerArea = false
+var inTreeArea = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -50,6 +55,46 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
+	if Input.is_action_just_pressed("interact") and !hasShovel and inShovelArea:
+		print("Player picked up shovel")
+		hasShovel = true
+		print(hasShovel)
+		# Getting Shovel Object from Garden Level Node and removing it
+		get_parent().get_parent().get_node("shovel").queue_free()
+		# Put shovel in hand
+		get_node("Neck/Camera3D/shovel2").show()
+	
+	if Input.is_action_just_pressed("interact") and !hasBeeSmoker and inBeeSmokerArea:
+		print("Player picked up bee smoker")
+		hasBeeSmoker = true
+		print(hasBeeSmoker)
+		# Getting Bee Smoker Object from Garden Level Node and removing it
+		get_parent().get_parent().get_node("garden bee smoker").queue_free()
+		# hide shovel
+		get_node("Neck/Camera3D/shovel2").hide()
+		# Put bee smoker in hand
+		get_node("Neck/Camera3D/garden bee smoker2").show()
+	
+	if Input.is_action_just_pressed("interact") and inTreeArea and hasBeeSmoker:
+		print("Player smoked bees")
+		get_node("Neck/Camera3D/TreeText").queue_free()
+		get_parent().get_parent().get_node("bee hive").queue_free()
+		get_parent().get_parent().get_node("KeyLight").show()
+		await get_tree().create_timer(2.0).timeout
+		get_parent().get_parent().get_node("garden key").show()
+		await get_tree().create_timer(2.0).timeout
+		get_parent().get_parent().get_node("garden key").queue_free()
+		get_node("Neck/Camera3D/KeyText").show()
+
+
+
+		inventory.gotBedroomKey = true
+		
+
+		
+	
+
+	
 
 	move_and_slide()
 
@@ -58,7 +103,7 @@ func _physics_process(delta):
 
 
 
-func _on_area_3d_body_entered(_body):
+func _on_area_3d_body_entered(body):
 	print("DKFJLSDFKJKSDLFJDSLKFJD")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	call_deferred("change_hallway")
@@ -72,3 +117,48 @@ func _on_book_body_entered(body):
 	inventory.gotGardenKey = true
 	print(inventory.gotGardenKey)
 	# body.queue_free()
+
+
+func _on_shovel_area_body_entered(body):
+	print("player near shovel")
+	if hasShovel == false:
+		get_node("Neck/Camera3D/ShovelText").show()
+	inShovelArea = true
+
+		
+
+
+func _on_shovel_area_body_exited(body):
+	get_node("Neck/Camera3D/ShovelText").hide()
+	inShovelArea = false
+
+
+func _on_tree_area_body_entered(body):
+	print("player enteered tree area")
+	if hasBeeSmoker and get_node("Neck/Camera3D/TreeText") != null:
+		get_node("Neck/Camera3D/TreeText").show()
+	
+	inTreeArea = true
+
+
+
+func _on_bee_smoker_area_body_entered(body):
+	if get_parent().get_parent().get_node("BeeSmokerArea").visible == true:
+		print("player entered bee smoker area")
+		if hasBeeSmoker == false and get_node("Neck/Camera3D/TreeText") != null:
+			get_node("Neck/Camera3D/BeeSmokerText").show()
+		inBeeSmokerArea = true
+
+
+		
+
+
+func _on_bee_smoker_area_body_exited(body):
+	get_node("Neck/Camera3D/BeeSmokerText").hide()
+	inBeeSmokerArea = false
+
+
+func _on_tree_area_body_exited(body):
+	if get_node("Neck/Camera3D/TreeText"):
+		get_node("Neck/Camera3D/TreeText").hide()
+	inTreeArea = false
