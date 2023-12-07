@@ -3,7 +3,7 @@
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="1_hmqw3"]
 [ext_resource type="Texture2D" uid="uid://bevkkpnhfid73" path="res://Assets/Altar/altar.png" id="1_ojrgo"]
 [ext_resource type="Script" path="res://Scripts/UI/Button.gd" id="3_ib4o5"]
-[ext_resource type="AudioStream" uid="uid://dmukx357mxdlq" path="res://Assets/Music/BGM/midnight-123895.mp3" id="4_0k6sm"]
+[ext_resource type="AudioStream" uid="uid://b60pv01dmx2vs" path="res://Assets/Music/BGM/dramatic-atmosphere-with-piano-and-violin-143149.mp3" id="4_psewe"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -37,7 +37,7 @@ text = "End"
 script = ExtResource("3_ib4o5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_0k6sm")
+stream = ExtResource("4_psewe")
 autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

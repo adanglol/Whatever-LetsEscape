@@ -61,7 +61,7 @@ offset_bottom = 102.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_fivx5")
 theme_override_font_sizes/font_size = 80
-text = "Looks like got key seems like there is nothing left here to do."
+text = "Got a key. It seems like there is nothing left here to do."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0s6cq")

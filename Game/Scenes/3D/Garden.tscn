@@ -11,7 +11,7 @@
 [ext_resource type="FontVariation" uid="uid://dersaul2xw361" path="res://Assets/Font/hauntFont.tres" id="10_npiwn"]
 [ext_resource type="PackedScene" uid="uid://biy5ltm2jryrw" path="res://Assets/Garden/artg 170 escape room dirt mound 1.glb" id="10_ocwgk"]
 [ext_resource type="PackedScene" uid="uid://ckm31n5o1fdu5" path="res://Assets/Garden/artg 170 escape room dirt mound top 1.glb" id="11_yqa0q"]
-[ext_resource type="AudioStream" uid="uid://dpkh4djkcggph" path="res://Assets/Music/BGM/scary-forest-90162.mp3" id="12_yjfkb"]
+[ext_resource type="AudioStream" uid="uid://ddikseeookjsv" path="res://Assets/Music/BGM/dark-side-178197.mp3" id="12_3ejdk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8d66a"]
 sky_top_color = Color(0.2, 0.243137, 0.305882, 1)
@@ -194,7 +194,8 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("10_npiwn")
 theme_override_font_sizes/font_size = 66
-text = "Looks like there was a key in the beehive. Looks important, so I guess I will stash it for now."
+text = "Looks like there was a key in the beehive. Looks important, so I guess I will stash it
+for now."
 
 [node name="HiveText" type="Label" parent="PlayerNode/Player/Neck/Camera3D"]
 visible = false
@@ -212,7 +213,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("10_npiwn")
 theme_override_font_sizes/font_size = 121
-text = "Looks like a mound press E to dig!"
+text = "Looks like a mound. Press E to dig!"
 
 [node name="DigText2" type="Label" parent="PlayerNode/Player/Neck/Camera3D"]
 visible = false
@@ -391,7 +392,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5014, 6.62761, -9.54204)
 shape = SubResource("BoxShape3D_lnbt1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_yjfkb")
+stream = ExtResource("12_3ejdk")
 volume_db = -9.0
 autoplay = true
 
